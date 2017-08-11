@@ -1,0 +1,33 @@
+{
+  "name": "s37",
+  "version": "1.0.0",
+  "description": "coding challenge for Science37",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unconfined/S37.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unconfined/S37/issues"
+  },
+  "homepage": "https://github.com/Unconfined/S37#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-ui-grid": "^4.0.6",
+    "angular-ui-router": "^1.0.0-rc.1",
+    "body-parser": "^1.17.2",
+    "css-loader": "^0.28.4",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.3"
+  }
+}
