@@ -1,20 +1,25 @@
 class DimensionsController {
-  constructor($window) {
-    this.window = $window;
+  constructor($window, $scope) {
+    this.$window = $window;
+    this.$scope = $scope;
   }
 
   $onInit() {
-    this.setDimensions();
-    this.updateDimensions();
+    this.width = this.$window.innerWidth;
+    this.height = this.$window.innerHeight;
+    this.$window.onresize = this.setDimensions.bind(this);
+  }
+
+  $onDestroy() {
+    this.$window.onresize = null;
   }
 
   setDimensions() {
-    this.height = this.window.innerHeight;
-    this.width = this.window.innerWidth;
-  }
+    // TODO: Reduce digest cycles
+    this.width = this.$window.innerWidth;
+    this.height = this.$window.innerHeight;
 
-  updateDimensions() {
-    this.window.onresize = this.setDimensions;
+    this.$scope.$apply();
   }
 }
 
