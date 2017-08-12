@@ -8,6 +8,12 @@ import appConfig from './app.config';
 import './app.css';
 
 angular
-  .module('app', ['ui.router', 'ui.grid', dimensionsModule, statesModule])
+  .module('app', [
+    'ui.router',
+    'ui.grid',
+    'ui.grid.edit',
+    dimensionsModule,
+    statesModule
+  ])
   .config(appConfig)
   .component('app', appComponent);
