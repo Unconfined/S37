@@ -7,6 +7,9 @@ class DimensionsController {
   $onInit() {
     this.width = this.$window.innerWidth;
     this.height = this.$window.innerHeight;
+  }
+
+  $postLink() {
     this.$window.onresize = this.setDimensions.bind(this);
   }
 
