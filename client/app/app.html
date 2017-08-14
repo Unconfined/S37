@@ -1,8 +1,15 @@
 <div id="app">
-  <nav>
-    <a ui-sref="landing" ui-sref-active="active">landing</a>
-    <a ui-sref="dimensions" ui-sref-active="active">dimensions</a>
-    <a ui-sref="states" ui-sref-active="active">states</a>
+  <nav class="navbar">
+    <div id="navbar-brand">
+      <a ui-sref="landing" class="navbar-item">S37</a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" ui-sref="landing" ui-sref-active="active">landing</a>
+        <a class="navbar-item" ui-sref="dimensions" ui-sref-active="active">dimensions</a>
+        <a class="navbar-item" ui-sref="states" ui-sref-active="active">states</a>
+      </div>
+    </div>
   </nav>
 
   <ui-view></ui-view>

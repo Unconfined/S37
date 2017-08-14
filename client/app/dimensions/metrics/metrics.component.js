@@ -1,5 +1,6 @@
 import template from './metrics.html';
 import controller from './metrics.controller';
+import './metrics.css';
 
 // TODO: Decide if this component is relevant
 

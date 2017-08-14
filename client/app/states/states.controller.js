@@ -5,7 +5,6 @@ class StatesController {
     //TODO: Use Save State feature (208)
     //TODO: Use cellEditableCondition to disable editing of state col
     //TODO: Add form validation
-    //TODO: use gridOptions to implement deletion of row
   }
 
   $onInit() {
@@ -26,7 +25,7 @@ class StatesController {
       {
         name: 'Delete',
         cellTemplate:
-          '<button ng-click="grid.appScope.deleteState(row)">Delete</button>'
+          '<button class="delete is-medium" ng-click="grid.appScope.deleteState(row)"></button>'
       }
     ];
 
@@ -35,10 +34,6 @@ class StatesController {
       columnDefs: this.columnDefitions,
       appScopeProvider: this
     };
-  }
-
-  randomFunc() {
-    console.log(this);
   }
 
   addState(state) {

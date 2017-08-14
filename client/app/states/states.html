@@ -1,13 +1,27 @@
-<div>
+<div class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title">States and Capitals Page</p>
+
+      <p class="subtitle">On this page, you can view, add, edit, and delete the states and capitals of the United States!</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
   Add a new state:
   <form novalidate class="simple-form">
-    <label>State Name: <input type="text" ng-model="$ctrl.newState.state" /></label><br />
-    <label>State Capital: <input type="text" ng-model="$ctrl.newState.capital" /></label><br />
-    <input type="submit" ng-click="$ctrl.addState($ctrl.newState)" value="Add State" />
+    <div class="field">
+      <label class="label">State Name: <input class="input" type="text" ng-model="$ctrl.newState.state" /></label><br />
+    </div>
+    <div class="field">
+      <label class="label">State Capital: <input class="input" type="text" ng-model="$ctrl.newState.capital" /></label><br
+      />
+    </div>
+    <input class="button is-primary" type="submit" ng-click="$ctrl.addState($ctrl.newState)" value="Add a State" />
   </form>
 
-  <button type="button" id="removeFirstRow" class="btn btn-success" ng-click="$ctrl.randomFunc()">Delete A State</button>
-  <br>
   <br>
   <div id="grid1" ui-grid="$ctrl.gridOptions" ui-grid-edit class="grid"></div>
 </div>
