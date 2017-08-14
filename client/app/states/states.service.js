@@ -16,8 +16,21 @@ const statesService = $http => {
     return states;
   };
 
+  const addState = state => {
+    if (state) {
+      states.unshift(state);
+    }
+  };
+
+  const deleteState = stateRow => {
+    const index = states.indexOf(stateRow.entity);
+    states.splice(index, 1);
+  };
+
   return {
     states: getStates(),
+    addState,
+    deleteState,
     getStates
   };
 };

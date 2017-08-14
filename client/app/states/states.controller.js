@@ -8,7 +8,7 @@ class StatesController {
   }
 
   $onInit() {
-    this.states = this.statesService.states;
+    this.states = this.statesService.getStates();
 
     this.newState = {
       state: '',
@@ -37,12 +37,11 @@ class StatesController {
   }
 
   addState(state) {
-    this.states.unshift(state);
+    this.statesService.addState(state);
   }
 
-  deleteState(row) {
-    const index = this.gridOptions.data.indexOf(row.entity);
-    this.gridOptions.data.splice(index, 1);
+  deleteState(stateRow) {
+    this.statesService.deleteState(stateRow);
   }
 }
 
