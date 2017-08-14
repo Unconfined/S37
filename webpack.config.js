@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './client/app/app.js',
@@ -18,5 +19,11 @@ module.exports = {
         use: ['raw-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'client/index.html',
+      inject: 'body'
+    })
+  ]
 };

@@ -1,13 +1,13 @@
 <div>
   Add a new state:
   <form novalidate class="simple-form">
-    <label>State Name: <input type="text" ng-model="$ctrl.newState.name" /></label><br />
+    <label>State Name: <input type="text" ng-model="$ctrl.newState.state" /></label><br />
     <label>State Capital: <input type="text" ng-model="$ctrl.newState.capital" /></label><br />
     <input type="submit" ng-click="$ctrl.addState($ctrl.newState)" value="Add State" />
   </form>
 
-  <button type="button" id="removeFirstRow" class="btn btn-success" ng-click="$ctrl.deleteState()">Delete A State</button>
+  <button type="button" id="removeFirstRow" class="btn btn-success" ng-click="$ctrl.randomFunc()">Delete A State</button>
   <br>
   <br>
-  <div id="grid1" ui-grid="{ data: $ctrl.states }" ui-grid-edit class="myGrid"></div>
+  <div id="grid1" ui-grid="$ctrl.gridOptions" ui-grid-edit class="grid"></div>
 </div>

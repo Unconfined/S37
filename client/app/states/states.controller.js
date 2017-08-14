@@ -1,5 +1,6 @@
 class StatesController {
-  constructor() {
+  constructor(statesService) {
+    this.statesService = statesService;
     //TODO: Use MongoDB instead of in memory states
     //TODO: Use Save State feature (208)
     //TODO: Use cellEditableCondition to disable editing of state col
@@ -8,29 +9,45 @@ class StatesController {
   }
 
   $onInit() {
+    this.states = this.statesService.states;
+
     this.newState = {
-      name: '',
+      state: '',
       capital: ''
     };
-    this.states = [
-      { name: 'California', capital: 'Sacremento' },
-      { name: 'Alabama', capital: 'Montgomery' },
-      { name: 'Arizona', capital: 'Phoenix' },
-      { name: 'Florida', capital: 'Tallahassee' },
-      { name: 'Idaho', capital: 'Boise' },
-      { name: 'Oregon', capital: 'Salem' },
-      { name: 'Texas', capital: 'Austin' },
-      { name: 'Louisiana', capital: 'Baton Rouge' },
-      { name: 'Kansas', capital: 'Topeka' }
+
+    this.columnDefitions = [
+      {
+        name: 'state'
+      },
+      {
+        name: 'capital'
+      },
+      {
+        name: 'Delete',
+        cellTemplate:
+          '<button ng-click="grid.appScope.deleteState(row)">Delete</button>'
+      }
     ];
+
+    this.gridOptions = {
+      data: this.states,
+      columnDefs: this.columnDefitions,
+      appScopeProvider: this
+    };
+  }
+
+  randomFunc() {
+    console.log(this);
   }
 
   addState(state) {
-    this.states.push(state);
+    this.states.unshift(state);
   }
 
-  deleteState(index) {
-    this.states.splice(index, 1);
+  deleteState(row) {
+    const index = this.gridOptions.data.indexOf(row.entity);
+    this.gridOptions.data.splice(index, 1);
   }
 }
 
