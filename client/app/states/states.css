@@ -1,1 +1,5 @@
-
+.grid {
+  width: 700px;
+  height: 250px;
+  margin: 0 auto 40px;
+}

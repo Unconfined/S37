@@ -1,4 +1,5 @@
-.grid {
-  width: 500px;
-  height: 250px;
+.active {
+  background-color: #00d1b2;
+  color: white;
+  border-bottom: 3px solid white;
 }

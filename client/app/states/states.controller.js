@@ -23,9 +23,10 @@ class StatesController {
         name: 'capital'
       },
       {
-        name: 'Delete',
+        name: 'X',
         cellTemplate:
-          '<button class="delete is-medium" ng-click="grid.appScope.deleteState(row)"></button>'
+          '<button class="delete is-medium" ng-click="grid.appScope.deleteState(row)"></button>',
+        maxWidth: 35
       }
     ];
 
